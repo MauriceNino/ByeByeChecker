@@ -1,0 +1,15 @@
+C:\Users\U572596\documents\visual studio 2012\Projects\TimeChecker\TimeChecker\bin\Debug\TimeChecker.exe.config
+C:\Users\U572596\documents\visual studio 2012\Projects\TimeChecker\TimeChecker\bin\Debug\TimeChecker.exe
+C:\Users\U572596\documents\visual studio 2012\Projects\TimeChecker\TimeChecker\bin\Debug\TimeChecker.pdb
+C:\Users\U572596\documents\visual studio 2012\Projects\TimeChecker\TimeChecker\obj\Debug\MainWindow.baml
+C:\Users\U572596\documents\visual studio 2012\Projects\TimeChecker\TimeChecker\obj\Debug\MainWindow.g.cs
+C:\Users\U572596\documents\visual studio 2012\Projects\TimeChecker\TimeChecker\obj\Debug\App.g.cs
+C:\Users\U572596\documents\visual studio 2012\Projects\TimeChecker\TimeChecker\obj\Debug\TimeChecker_MarkupCompile.cache
+C:\Users\U572596\documents\visual studio 2012\Projects\TimeChecker\TimeChecker\obj\Debug\TimeChecker.g.resources
+C:\Users\U572596\documents\visual studio 2012\Projects\TimeChecker\TimeChecker\obj\Debug\TimeChecker.Properties.Resources.resources
+C:\Users\U572596\documents\visual studio 2012\Projects\TimeChecker\TimeChecker\obj\Debug\TimeChecker.csproj.GenerateResource.Cache
+C:\Users\U572596\documents\visual studio 2012\Projects\TimeChecker\TimeChecker\obj\Debug\TimeChecker.exe
+C:\Users\U572596\documents\visual studio 2012\Projects\TimeChecker\TimeChecker\obj\Debug\TimeChecker.pdb
+C:\Users\U572596\documents\visual studio 2012\Projects\TimeChecker\TimeChecker\obj\Debug\TimeChecker.csprojResolveAssemblyReference.cache
+C:\Users\U572596\documents\visual studio 2012\Projects\TimeChecker\TimeChecker\obj\Debug\PercentShow.baml
+C:\Users\U572596\documents\visual studio 2012\Projects\TimeChecker\TimeChecker\obj\Debug\PercentShow.g.cs

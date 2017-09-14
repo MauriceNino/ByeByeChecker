@@ -1,0 +1,84 @@
+﻿<Window x:Class="TimeChecker.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ByeByeChecker" Height="213.558" Width="243.35" ResizeMode="NoResize" Closing="Window_Closing" Icon="timeico.ico"
+        FocusManager.FocusedElement="{Binding ElementName=timeInput}"
+        >
+    <Window.TaskbarItemInfo>
+        <TaskbarItemInfo x:Name="taskbarPercentProgressBar" Description="Checks when you can say Bye Bye"
+                     ProgressValue="0.0" ProgressState="Normal"/>
+    </Window.TaskbarItemInfo>
+    <Grid Margin="0,0,-1,0">
+        <TabControl HorizontalAlignment="Left" Height="176" VerticalAlignment="Top" Width="229">
+            <TabItem Header="Control">
+                <Grid Background="#FFE5E5E5">
+                    <Label Content="Start Time:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+
+                    <Grid Margin="102,-13,-23,87">
+                        <TextBox Width="101"  VerticalAlignment="Center" HorizontalAlignment="Left" x:Name="timeInput" Margin="5,7,0,6" TextChanged="timeInput_TextChanged" Height="27"/>
+                        <!--<TextBox x:Name="timeInput" Text="" HorizontalAlignment="Left" Height="30" Margin="81,16,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101" TextChanged="timeInput_TextChanged"/>-->
+                        <TextBlock IsHitTestVisible="False" Text="--:--" VerticalAlignment="Center" TextWrapping="Wrap" HorizontalAlignment="Left" Margin="8,14,0,14" Foreground="DarkGray" Width="91" Height="20">
+                            <TextBlock.Style>
+                                <Style TargetType="{x:Type TextBlock}">
+                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Text, ElementName=timeInput}" Value="">
+                                            <Setter Property="Visibility" Value="Visible"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
+                    </Grid>
+                    <Label Content="End Time:" HorizontalAlignment="Left" Margin="10,51,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="timeOutput" Content="--:--" HorizontalAlignment="Left" Margin="102,51,0,0" VerticalAlignment="Top"/>
+                    <Button IsEnabled="False" Focusable="False" x:Name="AlertButton" Content="X" HorizontalAlignment="Left" Margin="185,51,0,0" VerticalAlignment="Top" Width="24" Height="26" Click="AlertButton_Click" Background="Transparent"/>
+                    <Label x:Name="percentOutput" Content="100%" HorizontalAlignment="Right" Margin="0,109,9,0" VerticalAlignment="Top" RenderTransformOrigin="-0.85,0.654"/>
+                    <ProgressBar x:Name="percentProgressBar" HorizontalAlignment="Left" Height="13" Margin="10,91,0,0" VerticalAlignment="Top" Width="199"/>
+                    <Label x:Name="actTimeOutput" Content="00:00" HorizontalAlignment="Left" Margin="6,109,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.85,0.654"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Settings">
+                <ScrollViewer Margin="0,0,0,2" Height="Auto">
+
+                    <ScrollViewer.Resources>
+                        <Style TargetType="ScrollBar">
+                            <Style.Triggers>
+                                <Trigger Property="Orientation" Value="Vertical">
+                                    <Setter Property="Width" Value="2"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </ScrollViewer.Resources>
+                    <Grid Background="#FFE5E5E5" Height="284">
+                        <Label Content="Monday" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,98,0,0"/>
+                        <TextBox x:Name="mondayEntry" HorizontalAlignment="Left" Height="22" Margin="152,102,0,0" TextWrapping="Wrap" Text="00:00" VerticalAlignment="Top" Width="40"/>
+                        <Label Content="Tuesday" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,120,0,0"/>
+                        <TextBox x:Name="tuesdayEntry" HorizontalAlignment="Left" Height="22" Margin="152,124,0,0" TextWrapping="Wrap" Text="00:00" VerticalAlignment="Top" Width="40"/>
+                        <Label Content="Wednsday" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,142,0,0"/>
+                        <TextBox x:Name="wednsdayEntry" HorizontalAlignment="Left" Height="22" Margin="152,146,0,0" TextWrapping="Wrap" Text="00:00" VerticalAlignment="Top" Width="40"/>
+                        <Label Content="Thursday" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,164,0,0"/>
+                        <TextBox x:Name="thursdayEntry" HorizontalAlignment="Left" Height="22" Margin="152,168,0,0" TextWrapping="Wrap" Text="00:00" VerticalAlignment="Top" Width="40"/>
+                        <Label Content="Friday" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1,184,0,-13"/>
+                        <TextBox x:Name="fridayEntry" HorizontalAlignment="Left" Height="22" Margin="152,188,0,0" TextWrapping="Wrap" Text="00:00" VerticalAlignment="Top" Width="40"/>
+                        <Label Content="Saturday" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1,206,0,-35"/>
+                        <TextBox x:Name="saturdayEntry" HorizontalAlignment="Left" Height="22" Margin="152,210,0,0" TextWrapping="Wrap" Text="00:00" VerticalAlignment="Top" Width="40"/>
+                        <Label Content="Sunday" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1,228,0,-57"/>
+                        <TextBox x:Name="sundayEntry" HorizontalAlignment="Left" Height="22" Margin="152,232,0,0" TextWrapping="Wrap" Text="00:00" VerticalAlignment="Top" Width="40"/>
+
+
+                        <Button x:Name="settingsSaveButton" Content="Save" HorizontalAlignment="Left" Margin="148,259,0,0" VerticalAlignment="Top" Width="44" Click="settingsSaveButton_Click"/>
+
+
+                        <Label Content="Time Regex" HorizontalAlignment="Left" Margin="2,24,0,0" VerticalAlignment="Top"/>
+                        <TextBox x:Name="regexEntry" HorizontalAlignment="Left" Height="43" Margin="4,50,0,0" TextWrapping="Wrap" Text="/)=/=(/)=/(=)/()=" VerticalAlignment="Top" Width="188"/>
+
+                        <Label Content="Auto Set When Typing" HorizontalAlignment="Left" Margin="2,0,0,0" VerticalAlignment="Top"/>
+                        <CheckBox x:Name="autoSetWhenTypeCheckbox" HorizontalAlignment="Left" Margin="179,10,0,0" VerticalAlignment="Top" Checked="autoSetWhenTypeCheckbox_Checked" Unchecked="autoSetWhenTypeCheckbox_Unchecked"/>
+
+                    </Grid>
+                </ScrollViewer>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
